@@ -1,15 +1,13 @@
 <script>
 export default {
-    data() {
 
-    }
 }
 </script>
 
 <template>
     <header>
         <section>
-            <div class="container">
+            <div class="container container-sm container-xsm">
                 <div class="row_header">
 
                     <ul class="menu_kind">
@@ -32,4 +30,36 @@ export default {
     </header>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+header {
+    background-color: #FE6900;
+}
+
+.menu_kind {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.menu_shop {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.logo {
+    max-height: 20px;
+}
+
+.row_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+</style>

@@ -1,0 +1,35 @@
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 15px 0;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-4 {
+    width: calc(4 * 100% / 12);
+}
+
+@media (max-width: 768px) {
+    .col-12 {
+        width: calc(12 * 100% / 12);
+    }
+
+    .container-sm {
+        width: 550px;
+        margin: 0 auto;
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container-xsm {
+        width: 350px;
+        margin: 0 auto;
+        padding: 15px 0;
+    }
+}
