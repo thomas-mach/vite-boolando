@@ -1,30 +1,41 @@
 <script>
-import CardApp from './CardApp.vue';
-import dataProducts from '../assets/db.json';
-
 export default {
-    components: {
-        CardApp,
-    },
-    data() {
-        return {
-            products: dataProducts.products,
-        }
-    }
-}
+    props: ['product'],
 
+
+    // mounted() {
+    //     console.log('Products:', this.);
+    //     // O qualsiasi altra operazione che desideri eseguire con this.dataProducts.products
+    // }
+
+}
 </script>
 
 <template>
-    <main>
-        <div class="container container-sm container-xsm">
-            <div class="row">
-                <div class="col-4 col-6 col-12" v-for="(el, i) in products" key="i">
-                    <CardApp :product="el" />
+    <div class="col-4 col-6 col-12">
+        <div class="card">
+
+            <div class="card__main">
+                <img src="{{ product.frontImage }}" alt="1.webp">
+                <a href="#"><span class="badge__favorite">&hearts;</span></a>
+                <span class="badge__discount">-50%</span>
+                <span class="badge__sustainability">Sostenibilita</span>
+                <div class="overlay">
+                    <img src="../assets/1b.webp" alt="1b.webp">
                 </div>
             </div>
+
+            <div class="card__footer">
+                <div class="brand_name">{{ product.brand }}</div>
+                <div class="item_name">{{ product.name }}</div>
+                <div class="price">
+                    <span class="price_discount">{{ product.price }} &euro;</span>
+                    <span class="price_real">29,99 &euro;</span>
+                </div>
+            </div>
+
         </div>
-    </main>
+    </div>
 </template>
 
 <style lang="scss" scoped>

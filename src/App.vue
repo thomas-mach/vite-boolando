@@ -9,7 +9,6 @@ export default {
     HeaderApp,
     MainApp,
     FooterApp,
-
   },
 }
 </script>
