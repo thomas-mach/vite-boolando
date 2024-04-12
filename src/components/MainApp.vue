@@ -1,6 +1,7 @@
 <script>
 import CardApp from './CardApp.vue';
 import dataProducts from '../assets/db.json';
+import {store} from '../store';
 
 export default {
     components: {
@@ -8,9 +9,10 @@ export default {
     },
     data() {
         return {
-            products: dataProducts.products,
+            // products: dataProducts.products,
+            store,
         }
-    }
+    },
 }
 
 </script>
@@ -19,7 +21,7 @@ export default {
     <main>
         <div class="container container-sm container-xsm">
             <div class="row">
-                <div class="col-4 col-6 col-12" v-for="(el, i) in products" key="i">
+                <div class="col-4 col-6 col-12" v-for="(el, i) in store.products" key="i">
                     <CardApp :product="el" />
                 </div>
             </div>
