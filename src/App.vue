@@ -1,15 +1,31 @@
 <script>
-// primo passaggio imporare il componente
 import HeaderApp from './components/HeaderApp.vue';
 import MainApp from './components/MainApp.vue';
 import FooterApp from './components/FooterApp.vue';
+import axios from 'axios';
+import { store } from './store.js';
+
+
 export default {
-  // secondo passaggio registrare il componente
   components: {
     HeaderApp,
     MainApp,
     FooterApp,
   },
+  methods: {
+    fetchProducts() {
+      axios.get('http://localhost:3000/products').then((res) => {
+        store.products = res.data
+        console.log(res.data)
+
+      })
+
+    }
+
+  },
+  created() {
+    this.fetchProducts()
+  }
 }
 </script>
 
@@ -17,10 +33,8 @@ export default {
   <HeaderApp />
   <MainApp />
   <FooterApp />
-
 </template>
 
-<!-- qui non ci deve essere l'attributo scoped -->
 <style lang="scss">
 @use './style/generals';
 </style>

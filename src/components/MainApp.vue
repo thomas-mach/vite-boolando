@@ -1,7 +1,6 @@
 <script>
 import CardApp from './CardApp.vue';
-import dataProducts from '../assets/db.json';
-import {store} from '../store';
+import { store } from '../store';
 
 export default {
     components: {
@@ -9,7 +8,6 @@ export default {
     },
     data() {
         return {
-            // products: dataProducts.products,
             store,
         }
     },
